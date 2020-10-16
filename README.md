@@ -1,6 +1,6 @@
 # Cannon-Climbing
 
-**The Project** <br>
+**This project** <br>
 A game based on the game: Getting over it.
 You are a cannon that needs to proceed trough the map by shooting.
 
