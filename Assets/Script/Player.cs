@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    JsonInfo saveScript = new JsonInfo();
-    SaveScript saveScript2 = new SaveScript();
+    JsonInfo saveScript;
+    SaveScript saveScript2;
     ObjectPool_Script objectPoolScript;
     public GameObject shootEffect;
 
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     private bool isGrounded;
     private Rigidbody rb;
     [SerializeField]private float waterStrength;
-
+    [SerializeField] private float _PowerMulti;
     public float power;
     public Text powerText;
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
 
         if (Input.GetMouseButtonUp(0))
         {
-            KnockBack(power);
+            KnockBack(power * _PowerMulti);
         }
 	}
     void FixedUpdate()
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
 
     void Fire()
     {
-        saveScript.totalCannonShots += 1;
+        //saveScript.totalCannonShots += 1;
         Instantiate(shootEffect, new Vector3(shootPoint.transform.position.x, shootPoint.transform.position.y, shootPoint.transform.position.z), Quaternion.identity);
         for (int i = 0; i < objectPoolScript.objects.Count; i++)
         {

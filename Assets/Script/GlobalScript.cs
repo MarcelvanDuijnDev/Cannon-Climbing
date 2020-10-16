@@ -40,4 +40,9 @@ public class GlobalScript : MonoBehaviour {
     {
         SceneManager.LoadScene(0);
     }
+
+    public void LoadScene(int sceneid)
+    {
+        SceneManager.LoadScene(sceneid);
+    }
 }

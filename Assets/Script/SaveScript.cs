@@ -6,7 +6,7 @@ using System.IO;
 
 public class SaveScript : MonoBehaviour 
 {
-    public JsonInfo JsonDataScript = new JsonInfo();
+    JsonInfo JsonDataScript;
 
     [SerializeField]private bool dontSave;
 
@@ -44,6 +44,7 @@ public class SaveScript : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class JsonInfo
 { 
     public int levelIndex;
